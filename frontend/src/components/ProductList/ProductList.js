@@ -19,21 +19,23 @@ function ProductList({ products, onDelete, onEdit }) {
             <Link to={`/products/${product.id}`} className="product-title">
               {product.name}
             </Link>
+          </div>
+          <div className="product-right">
             <span className="product-price">
               {product.price ? product.price.toLocaleString() + " 円" : "-"}
             </span>
-          </div>
-          <div className="product-actions">
-            {onEdit && (
-              <button className="product-btn" onClick={() => onEdit(product)}>
-                編集
-              </button>
-            )}
-            {onDelete && (
-              <button className="product-btn" onClick={() => onDelete(product.id)}>
-                削除
-              </button>
-            )}
+            <div className="product-actions">
+              {onEdit && (
+                <button className="product-btn" onClick={() => onEdit(product)}>
+                  編集
+                </button>
+              )}
+              {onDelete && (
+                <button className="product-btn" onClick={() => onDelete(product.id)}>
+                  削除
+                </button>
+              )}
+            </div>
           </div>
         </div>
       ))}
