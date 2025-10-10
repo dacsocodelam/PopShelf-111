@@ -5421,3 +5421,461 @@ Processing by Api::V1::ProductsController#index as */*
 Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 2851)
 
 
+Started GET "/ws" for ::1 at 2025-10-03 11:54:31 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started PATCH "/api/v1/products/29" for ::1 at 2025-10-03 11:54:47 +0900
+Processing by Api::V1::ProductsController#update as */*
+  Parameters: {"product"=>{"id"=>"29", "name"=>"The Great Gatsby", "description"=>"A novel by F. Scott Fitzgerald.", "author"=>"F. Scott Fitzgerald", "release_year"=>"1925", "price"=>"15.99", "genre"=>"Novel", "rating"=>"5", "created_at"=>"2025-10-03T02:44:33.090Z", "updated_at"=>"2025-10-03T02:44:33.090Z", "cover_photo_url"=>"null", "cover_photo"=>#<ActionDispatch::Http::UploadedFile:0x0000024885f8cda0 @tempfile=#<Tempfile:C:/Users/vongo/AppData/Local/Temp/RackMultipart20251003-10452-bldk0k.jpg>, @content_type="image/jpeg", @original_filename="tải xuống.jpg", @headers="Content-Disposition: form-data; name=\"product[cover_photo]\"; filename=\"tải xuống.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "id"=>"29"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 29 LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:39:in `set_product'
+[31mUnpermitted parameters: :id, :created_at, :updated_at, :cover_photo_url. Context: { controller: Api::V1::ProductsController, action: update, request: #<ActionDispatch::Request:0x0000024884cd79f8>, params: {"product"=>{"id"=>"29", "name"=>"The Great Gatsby", "description"=>"A novel by F. Scott Fitzgerald.", "author"=>"F. Scott Fitzgerald", "release_year"=>"1925", "price"=>"15.99", "genre"=>"Novel", "rating"=>"5", "created_at"=>"2025-10-03T02:44:33.090Z", "updated_at"=>"2025-10-03T02:44:33.090Z", "cover_photo_url"=>"null", "cover_photo"=>#<ActionDispatch::Http::UploadedFile:0x0000024885f8cda0 @tempfile=#<Tempfile:C:/Users/vongo/AppData/Local/Temp/RackMultipart20251003-10452-bldk0k.jpg>, @content_type="image/jpeg", @original_filename="tải xuống.jpg", @headers="Content-Disposition: form-data; name=\"product[cover_photo]\"; filename=\"tải xuống.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "controller"=>"api/v1/products", "action"=>"update", "id"=>"29"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ('b4f4v5wntljdqm7h0ctlmlcnq9na', 'tải xuống.jpg', 'image/jpeg', '{"identified":true}', 'local', 13813, 'v0aNpzyObcTPmQvheDc91A==', '2025-10-03 02:54:47.757419') RETURNING "id" /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ('cover_photo', 'Product', 29, 8, '2025-10-03 02:54:47.759639') RETURNING "id" /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mProduct Update (0.0ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-10-03 02:54:47.761071' WHERE "products"."id" = 29 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+[36m  Disk Storage (8.1ms) [0m[32mUploaded file to key: b4f4v5wntljdqm7h0ctlmlcnq9na (checksum: v0aNpzyObcTPmQvheDc91A==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 78ec60e8-ed2d-413c-af3e-2f0473abea80) to Async(default) with arguments: #<GlobalID:0x000002488546f288 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/8>>
+[ActiveJob] ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+Completed 200 OK in 147ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 35806)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-03 11:54:47 +0900
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*application='Backend'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80] Performing ActiveStorage::AnalyzeJob (Job ID: 78ec60e8-ed2d-413c-af3e-2f0473abea80) from Async(default) enqueued at 2025-10-03T02:54:47.805831600Z with arguments: #<GlobalID:0x0000024884840520 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80]   [1m[36mActiveStorage::Blob Update (1.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = '{"identified":true,"analyzed":true}' WHERE "active_storage_blobs"."id" = 8 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = 8 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (7.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 14.2ms | Allocations: 4662)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--b847b63eccb525d40be6c0849e2b492a1ddf3511/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg" for ::1 at 2025-10-03 11:54:47 +0900
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 29 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80]   [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-10-03 02:54:47.929091' WHERE "products"."id" = 29 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [78ec60e8-ed2d-413c-af3e-2f0473abea80] Performed ActiveStorage::AnalyzeJob (Job ID: 78ec60e8-ed2d-413c-af3e-2f0473abea80) from Async(default) in 66.68ms
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--b847b63eccb525d40be6c0849e2b492a1ddf3511", "filename"=>"tải xuống"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='show',application='Backend',controller='redirect'*/[0m
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: b4f4v5wntljdqm7h0ctlmlcnq9na (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiNGY0djV3bnRsamRxbTdoMGN0bG1sY25xOW5hIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZy5qcGdcIjsgZmlsZW5hbWUqPVVURi04Jyd0JUUxJUJBJUEzaSUyMHh1JUUxJUJCJTkxbmcuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMDNUMDI6NTk6NDguMDM1WiIsInB1ciI6ImJsb2Jfa2V5In19--8c51b11496158cf7209722fab5643e48b0bbee55/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiNGY0djV3bnRsamRxbTdoMGN0bG1sY25xOW5hIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZy5qcGdcIjsgZmlsZW5hbWUqPVVURi04Jyd0JUUxJUJBJUEzaSUyMHh1JUUxJUJCJTkxbmcuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMDNUMDI6NTk6NDguMDM1WiIsInB1ciI6ImJsb2Jfa2V5In19--8c51b11496158cf7209722fab5643e48b0bbee55/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg
+Completed 302 Found in 41ms (ActiveRecord: 0.1ms | Allocations: 6346)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiNGY0djV3bnRsamRxbTdoMGN0bG1sY25xOW5hIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZy5qcGdcIjsgZmlsZW5hbWUqPVVURi04Jyd0JUUxJUJBJUEzaSUyMHh1JUUxJUJCJTkxbmcuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMDNUMDI6NTk6NDguMDM1WiIsInB1ciI6ImJsb2Jfa2V5In19--8c51b11496158cf7209722fab5643e48b0bbee55/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg" for ::1 at 2025-10-03 11:54:48 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tải xuống"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 232)
+
+
+Started PATCH "/api/v1/products/30" for ::1 at 2025-10-03 11:55:13 +0900
+Processing by Api::V1::ProductsController#update as */*
+  Parameters: {"product"=>{"id"=>"30", "name"=>"Inception", "description"=>"A mind-bending thriller.", "author"=>"Christopher Nolan", "release_year"=>"2010", "price"=>"19.99", "genre"=>"Movie", "rating"=>"5", "created_at"=>"2025-10-03T02:44:33.098Z", "updated_at"=>"2025-10-03T02:44:33.098Z", "cover_photo_url"=>"null", "cover_photo"=>#<ActionDispatch::Http::UploadedFile:0x0000024885efc908 @tempfile=#<Tempfile:C:/Users/vongo/AppData/Local/Temp/RackMultipart20251003-10452-ssdv0a.jpg>, @content_type="image/jpeg", @original_filename="tải xuống (5).jpg", @headers="Content-Disposition: form-data; name=\"product[cover_photo]\"; filename=\"tải xuống (5).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "id"=>"30"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 30 LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:39:in `set_product'
+[31mUnpermitted parameters: :id, :created_at, :updated_at, :cover_photo_url. Context: { controller: Api::V1::ProductsController, action: update, request: #<ActionDispatch::Request:0x00000248837bc960>, params: {"product"=>{"id"=>"30", "name"=>"Inception", "description"=>"A mind-bending thriller.", "author"=>"Christopher Nolan", "release_year"=>"2010", "price"=>"19.99", "genre"=>"Movie", "rating"=>"5", "created_at"=>"2025-10-03T02:44:33.098Z", "updated_at"=>"2025-10-03T02:44:33.098Z", "cover_photo_url"=>"null", "cover_photo"=>#<ActionDispatch::Http::UploadedFile:0x0000024885efc908 @tempfile=#<Tempfile:C:/Users/vongo/AppData/Local/Temp/RackMultipart20251003-10452-ssdv0a.jpg>, @content_type="image/jpeg", @original_filename="tải xuống (5).jpg", @headers="Content-Disposition: form-data; name=\"product[cover_photo]\"; filename=\"tải xuống (5).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "controller"=>"api/v1/products", "action"=>"update", "id"=>"30"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ('bxvxdi503i9ksehodlwpgnje8ap8', 'tải xuống (5).jpg', 'image/jpeg', '{"identified":true}', 'local', 14836, 'T/sXf24Fk1JmNRU0hNtBFQ==', '2025-10-03 02:55:13.183679') RETURNING "id" /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ('cover_photo', 'Product', 30, 9, '2025-10-03 02:55:13.191347') RETURNING "id" /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mProduct Update (0.0ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-10-03 02:55:13.192928' WHERE "products"."id" = 30 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+[36m  Disk Storage (10.7ms) [0m[32mUploaded file to key: bxvxdi503i9ksehodlwpgnje8ap8 (checksum: T/sXf24Fk1JmNRU0hNtBFQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 5ebab8d4-6a9b-4de7-bb64-953bb100d780) to Async(default) with arguments: #<GlobalID:0x0000024881cca6c0 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/9>>
+[ActiveJob] ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+Completed 200 OK in 45ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 8451)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-03 11:55:13 +0900
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*application='Backend'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780] Performing ActiveStorage::AnalyzeJob (Job ID: 5ebab8d4-6a9b-4de7-bb64-953bb100d780) from Async(default) enqueued at 2025-10-03T02:55:13.206502700Z with arguments: #<GlobalID:0x000002488312c7f8 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/9>>
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 4358)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--562e081d20bf9bf113a00f2dd34b16d8f90f6009/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg" for ::1 at 2025-10-03 11:55:13 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--562e081d20bf9bf113a00f2dd34b16d8f90f6009", "filename"=>"tải xuống (5)"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='show',application='Backend',controller='redirect'*/[0m
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: bxvxdi503i9ksehodlwpgnje8ap8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJieHZ4ZGk1MDNpOWtzZWhvZGx3cGduamU4YXA4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg1JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODUlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMDNUMDM6MDA6MTMuMzU2WiIsInB1ciI6ImJsb2Jfa2V5In19--0a576e4c02d006b0b3044b26c9b66a3e43d98306/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJieHZ4ZGk1MDNpOWtzZWhvZGx3cGduamU4YXA4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg1JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODUlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMDNUMDM6MDA6MTMuMzU2WiIsInB1ciI6ImJsb2Jfa2V5In19--0a576e4c02d006b0b3044b26c9b66a3e43d98306/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1297)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJieHZ4ZGk1MDNpOWtzZWhvZGx3cGduamU4YXA4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg1JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODUlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMDNUMDM6MDA6MTMuMzU2WiIsInB1ciI6ImJsb2Jfa2V5In19--0a576e4c02d006b0b3044b26c9b66a3e43d98306/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg" for ::1 at 2025-10-03 11:55:13 +0900
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780]   [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = '{"identified":true,"analyzed":true}' WHERE "active_storage_blobs"."id" = 9 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = 9 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780]   [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 30 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780]   [1m[36mProduct Update (0.0ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-10-03 02:55:13.410052' WHERE "products"."id" = 30 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5ebab8d4-6a9b-4de7-bb64-953bb100d780] Performed ActiveStorage::AnalyzeJob (Job ID: 5ebab8d4-6a9b-4de7-bb64-953bb100d780) from Async(default) in 143.53ms
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tải xuống (5)"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
+Started PATCH "/api/v1/products/31" for ::1 at 2025-10-03 11:55:36 +0900
+Processing by Api::V1::ProductsController#update as */*
+  Parameters: {"product"=>{"id"=>"31", "name"=>"The Legend of Zelda: Breath of the Wild", "description"=>"An action-adventure game.", "author"=>"Nintendo", "release_year"=>"2017", "price"=>"59.99", "genre"=>"Game", "rating"=>"5", "created_at"=>"2025-10-03T02:44:33.105Z", "updated_at"=>"2025-10-03T02:44:33.105Z", "cover_photo_url"=>"null", "cover_photo"=>#<ActionDispatch::Http::UploadedFile:0x000002488290c820 @tempfile=#<Tempfile:C:/Users/vongo/AppData/Local/Temp/RackMultipart20251003-10452-qd76gi.jpg>, @content_type="image/jpeg", @original_filename="tải xuống (6).jpg", @headers="Content-Disposition: form-data; name=\"product[cover_photo]\"; filename=\"tải xuống (6).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "id"=>"31"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 31 LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:39:in `set_product'
+[31mUnpermitted parameters: :id, :created_at, :updated_at, :cover_photo_url. Context: { controller: Api::V1::ProductsController, action: update, request: #<ActionDispatch::Request:0x0000024884cf61a0>, params: {"product"=>{"id"=>"31", "name"=>"The Legend of Zelda: Breath of the Wild", "description"=>"An action-adventure game.", "author"=>"Nintendo", "release_year"=>"2017", "price"=>"59.99", "genre"=>"Game", "rating"=>"5", "created_at"=>"2025-10-03T02:44:33.105Z", "updated_at"=>"2025-10-03T02:44:33.105Z", "cover_photo_url"=>"null", "cover_photo"=>#<ActionDispatch::Http::UploadedFile:0x000002488290c820 @tempfile=#<Tempfile:C:/Users/vongo/AppData/Local/Temp/RackMultipart20251003-10452-qd76gi.jpg>, @content_type="image/jpeg", @original_filename="tải xuống (6).jpg", @headers="Content-Disposition: form-data; name=\"product[cover_photo]\"; filename=\"tải xuống (6).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "controller"=>"api/v1/products", "action"=>"update", "id"=>"31"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ('tqp2v46w8zndrt8n6inu6huef7n4', 'tải xuống (6).jpg', 'image/jpeg', '{"identified":true}', 'local', 10299, 'GmW/8QPoZuo8ZrTanHASMA==', '2025-10-03 02:55:36.727877') RETURNING "id" /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ('cover_photo', 'Product', 31, 10, '2025-10-03 02:55:36.729384') RETURNING "id" /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mProduct Update (0.0ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-10-03 02:55:36.730655' WHERE "products"."id" = 31 /*action='update',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+[36m  Disk Storage (8.8ms) [0m[32mUploaded file to key: tqp2v46w8zndrt8n6inu6huef7n4 (checksum: GmW/8QPoZuo8ZrTanHASMA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0ff9b5f9-029d-45ff-96e8-ca200660a5a0) to Async(default) with arguments: #<GlobalID:0x0000024885f6f160 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/10>>
+[ActiveJob] ↳ app/controllers/api/v1/products_controller.rb:24:in `update'
+Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 8419)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-03 11:55:36 +0900
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*application='Backend'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0] Performing ActiveStorage::AnalyzeJob (Job ID: 0ff9b5f9-029d-45ff-96e8-ca200660a5a0) from Async(default) enqueued at 2025-10-03T02:55:36.742160000Z with arguments: #<GlobalID:0x0000024885e7be20 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/10>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0]   [1m[36mActiveStorage::Blob Update (7.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = '{"identified":true,"analyzed":true}' WHERE "active_storage_blobs"."id" = 10 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = 10 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0]   [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 31 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0]   [1m[36mProduct Update (0.0ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-10-03 02:55:36.827302' WHERE "products"."id" = 31 /*application='Backend',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0ff9b5f9-029d-45ff-96e8-ca200660a5a0] Performed ActiveStorage::AnalyzeJob (Job ID: 0ff9b5f9-029d-45ff-96e8-ca200660a5a0) from Async(default) in 19.16ms
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 5055)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTAsInB1ciI6ImJsb2JfaWQifX0=--f7606dbb3683caeb1a94671c265a090f120f649a/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg" for ::1 at 2025-10-03 11:55:36 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTAsInB1ciI6ImJsb2JfaWQifX0=--f7606dbb3683caeb1a94671c265a090f120f649a", "filename"=>"tải xuống (6)"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='show',application='Backend',controller='redirect'*/[0m
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: tqp2v46w8zndrt8n6inu6huef7n4 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ0cXAydjQ2dzh6bmRydDhuNmludTZodWVmN240IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg2JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODYlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMDNUMDM6MDA6MzYuOTE0WiIsInB1ciI6ImJsb2Jfa2V5In19--26f5ad5b7bd53f31bcbc21568f51632509433073/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ0cXAydjQ2dzh6bmRydDhuNmludTZodWVmN240IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg2JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODYlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMDNUMDM6MDA6MzYuOTE0WiIsInB1ciI6ImJsb2Jfa2V5In19--26f5ad5b7bd53f31bcbc21568f51632509433073/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1288)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ0cXAydjQ2dzh6bmRydDhuNmludTZodWVmN240IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg2JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODYlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMDNUMDM6MDA6MzYuOTE0WiIsInB1ciI6ImJsb2Jfa2V5In19--26f5ad5b7bd53f31bcbc21568f51632509433073/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg" for ::1 at 2025-10-03 11:55:36 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tải xuống (6)"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-03 12:19:27 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 3.4ms | Allocations: 5308)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-03 12:19:27 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 5054)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-03 12:19:29 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 5054)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-03 12:19:30 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 5054)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-10 09:23:22 +0900
+Started POST "/api/v1/login" for ::1 at 2025-10-10 09:23:22 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"[FILTERED]", "password"=>"[FILTERED]", "session"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@example.com' LIMIT 1 /*action='create',application='Backend',controller='sessions'*/[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 575ms (Views: 1.2ms | ActiveRecord: 2.7ms | Allocations: 34029)
+
+
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 855ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 50198)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-10 09:23:23 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 5058)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-10 09:23:23 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 5054)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTAsInB1ciI6ImJsb2JfaWQifX0=--f7606dbb3683caeb1a94671c265a090f120f649a/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg" for ::1 at 2025-10-10 09:23:23 +0900
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--b847b63eccb525d40be6c0849e2b492a1ddf3511/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg" for ::1 at 2025-10-10 09:23:23 +0900
+Started GET "/api/v1/products" for ::1 at 2025-10-10 09:23:23 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 5358)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTAsInB1ciI6ImJsb2JfaWQifX0=--f7606dbb3683caeb1a94671c265a090f120f649a", "filename"=>"tải xuống (6)"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--b847b63eccb525d40be6c0849e2b492a1ddf3511", "filename"=>"tải xuống"}
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--562e081d20bf9bf113a00f2dd34b16d8f90f6009/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg" for ::1 at 2025-10-10 09:23:24 +0900
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='show',application='Backend',controller='redirect'*/[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='show',application='Backend',controller='redirect'*/[0m
+[36m  Disk Storage (90.0ms) [0m[34mGenerated URL for file at key: tqp2v46w8zndrt8n6inu6huef7n4 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ0cXAydjQ2dzh6bmRydDhuNmludTZodWVmN240IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg2JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODYlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTBUMDA6Mjg6MjQuMTIyWiIsInB1ciI6ImJsb2Jfa2V5In19--0ab0193553721d8455d9f0cea961418efe71401e/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ0cXAydjQ2dzh6bmRydDhuNmludTZodWVmN240IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg2JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODYlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTBUMDA6Mjg6MjQuMTIyWiIsInB1ciI6ImJsb2Jfa2V5In19--0ab0193553721d8455d9f0cea961418efe71401e/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg
+Completed 302 Found in 280ms (ActiveRecord: 0.1ms | Allocations: 7579)
+
+
+[36m  Disk Storage (89.8ms) [0m[34mGenerated URL for file at key: b4f4v5wntljdqm7h0ctlmlcnq9na (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiNGY0djV3bnRsamRxbTdoMGN0bG1sY25xOW5hIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZy5qcGdcIjsgZmlsZW5hbWUqPVVURi04Jyd0JUUxJUJBJUEzaSUyMHh1JUUxJUJCJTkxbmcuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTBUMDA6Mjg6MjQuMTIzWiIsInB1ciI6ImJsb2Jfa2V5In19--042ea03a55044b451fd29ed80ddd7330797a08ae/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiNGY0djV3bnRsamRxbTdoMGN0bG1sY25xOW5hIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZy5qcGdcIjsgZmlsZW5hbWUqPVVURi04Jyd0JUUxJUJBJUEzaSUyMHh1JUUxJUJCJTkxbmcuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTBUMDA6Mjg6MjQuMTIzWiIsInB1ciI6ImJsb2Jfa2V5In19--042ea03a55044b451fd29ed80ddd7330797a08ae/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg
+Completed 302 Found in 272ms (ActiveRecord: 0.1ms | Allocations: 7712)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--562e081d20bf9bf113a00f2dd34b16d8f90f6009", "filename"=>"tải xuống (5)"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='show',application='Backend',controller='redirect'*/[0m
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: bxvxdi503i9ksehodlwpgnje8ap8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJieHZ4ZGk1MDNpOWtzZWhvZGx3cGduamU4YXA4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg1JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODUlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTBUMDA6Mjg6MjQuMTQ4WiIsInB1ciI6ImJsb2Jfa2V5In19--5153fb8c8bf57b97779ee97cc9cda59b387c9fe2/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJieHZ4ZGk1MDNpOWtzZWhvZGx3cGduamU4YXA4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg1JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODUlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTBUMDA6Mjg6MjQuMTQ4WiIsInB1ciI6ImJsb2Jfa2V5In19--5153fb8c8bf57b97779ee97cc9cda59b387c9fe2/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1788)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ0cXAydjQ2dzh6bmRydDhuNmludTZodWVmN240IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg2JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODYlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTBUMDA6Mjg6MjQuMTIyWiIsInB1ciI6ImJsb2Jfa2V5In19--0ab0193553721d8455d9f0cea961418efe71401e/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg" for ::1 at 2025-10-10 09:23:24 +0900
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiNGY0djV3bnRsamRxbTdoMGN0bG1sY25xOW5hIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZy5qcGdcIjsgZmlsZW5hbWUqPVVURi04Jyd0JUUxJUJBJUEzaSUyMHh1JUUxJUJCJTkxbmcuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTBUMDA6Mjg6MjQuMTIzWiIsInB1ciI6ImJsb2Jfa2V5In19--042ea03a55044b451fd29ed80ddd7330797a08ae/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg" for ::1 at 2025-10-10 09:23:24 +0900
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJieHZ4ZGk1MDNpOWtzZWhvZGx3cGduamU4YXA4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg1JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODUlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTBUMDA6Mjg6MjQuMTQ4WiIsInB1ciI6ImJsb2Jfa2V5In19--5153fb8c8bf57b97779ee97cc9cda59b387c9fe2/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg" for ::1 at 2025-10-10 09:23:24 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tải xuống"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tải xuống (5)"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tải xuống (6)"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 577)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 464)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-10 09:23:31 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 5056)
+
+
+Started GET "/api/v1/products" for ::1 at 2025-10-10 09:23:31 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 5056)
+
+
