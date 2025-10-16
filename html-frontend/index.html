@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopShelf - Sản phẩm nổi bật</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <img src="../images/logo.png" alt="PopShelf Logo" class="logo" style="height:48px;vertical-align:middle;" onerror="this.onerror=null; this.src='images/logo.png';">
+            <span class="shop-title">PopShelf</span>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">ホーム</a>
+                <a href="admin.html" class="nav-link">管理</a>
+                <a href="login.html" class="nav-link">ログイン</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Giới thiệu -->
+    <section class="intro-section">
+        <h1 class="intro-title">PopShelfへようこそ！</h1>
+        <p class="intro-desc">注目の商品、本、映画、ゲームなどを発見しましょう。検索、詳細表示、商品管理も簡単です。PopShelfで現代的なショッピング体験を始めましょう！</p>
+    </section>
+
+    <div class="home-container">
+        <!-- Thanh tìm kiếm -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="商品を検索..." />
+            <button onclick="searchProducts()">検索</button>
+        </div>
+
+        <!-- Danh sách sản phẩm tĩnh -->
+        <div class="product-list">
+            <h2 class="product-list-title">製品一覧</h2>
+            <div>
+                <div class="product-item" onclick="window.location.href='product-detail.html?id=1'" style="cursor:pointer;">
+                    <div class="product-info">
+                        <img src="/images/tải xuống.png" alt="未来ノート (Mirai Note)" class="product-image" />
+                        <span class="product-title">未来ノート (Mirai Note)</span>
+                    </div>
+                    <span class="product-price">1980 円</span>
+                </div>
+                <div class="product-item" onclick="window.location.href='product-detail.html?id=2'" style="cursor:pointer;">
+                    <div class="product-info">
+                        <img src="/images/The Great Gatsby.jpg" alt="The Great Gatsby" class="product-image" />
+                        <span class="product-title">The Great Gatsby</span>
+                    </div>
+                    <span class="product-price">1599 円</span>
+                </div>
+                <div class="product-item" onclick="window.location.href='product-detail.html?id=3'" style="cursor:pointer;">
+                    <div class="product-info">
+                        <img src="/images/Inception.jpg" alt="Inception" class="product-image" />
+                        <span class="product-title">Inception</span>
+                    </div>
+                    <span class="product-price">1999 円</span>
+                </div>
+                <div class="product-item" onclick="window.location.href='product-detail.html?id=4'" style="cursor:pointer;">
+                    <div class="product-info">
+                        <img src="/images/The Legend of Zelda - Breath of the Wild.jpg" alt="The Legend of Zelda: Breath of the Wild" class="product-image" />
+                        <span class="product-title">The Legend of Zelda: Breath of the Wild</span>
+                    </div>
+                    <span class="product-price">5999 円</span>
+                </div>
+                <div class="product-item" onclick="window.location.href='product-detail.html?id=5'" style="cursor:pointer;">
+                    <div class="product-info">
+                        <img src="/images/Atomic Habits.jpg" alt="Atomic Habits" class="product-image" />
+                        <span class="product-title">Atomic Habits</span>
+                    </div>
+                    <span class="product-price">1250 円</span>
+                </div>
+                <div class="product-item" onclick="window.location.href='product-detail.html?id=6'" style="cursor:pointer;">
+                    <div class="product-info">
+                        <img src="/images/Interstellar.jpg" alt="Interstellar" class="product-image" />
+                        <span class="product-title">Interstellar</span>
+                    </div>
+                    <span class="product-price">2100 円</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="admin.html" class="home-admin-float-link">
+            管理ページへ
+        </a>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <strong>PopShelf</strong> &copy; 2025<br>
+                住所:  奥出雲横田<br>
+                メール: <a href="mailto:vnd22darkhorse@popshelf.com">vnd22darkhorse@popshelf.com</a>
+           
+        </div>
+    </footer>
+</body>
+</html>

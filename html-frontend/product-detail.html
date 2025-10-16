@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - PopShelf</title>
+    <link rel="stylesheet" href="css/home.css">
+    <style>
+        .detail-container {
+            max-width: 700px;
+            margin: 48px auto;
+            background: rgba(255,255,255,0.98);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 #d66dd3;
+            padding: 32px 40px;
+        }
+        .detail-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #3f2b96;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+        }
+        .detail-table th, .detail-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e0b3f7;
+            text-align: left;
+        }
+        .detail-table th {
+            color: #3f2b96;
+            font-weight: 700;
+            width: 160px;
+            background: #f3e6fa;
+        }
+        .detail-table td {
+            color: #222;
+            font-weight: 500;
+        }
+        .detail-cover {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #d66dd3;
+            box-shadow: 0 2px 8px 0 #e0b3f7;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 18px;
+            color: #3f2b96;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            background: #f3e6fa;
+            transition: background 0.2s;
+        }
+        .back-link:hover {
+            background: #d66dd3;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+    <h1 class="detail-title" id="detailTitle">商品詳細 / Product Detail</h1>
+        <table class="detail-table">
+            <tr>
+                <th>商品名 / Name</th>
+                <td id="detailName"></td>
+            </tr>
+            <tr>
+                <th>説明 / Description</th>
+                <td id="detailDesc"></td>
+            </tr>
+            <tr>
+                <th>著者 / Author</th>
+                <td id="detailAuthor"></td>
+            </tr>
+            <tr>
+                <th>リリース年 / Release Year</th>
+                <td id="detailYear"></td>
+            </tr>
+            <tr>
+                <th>価格 (円) / Price (Yen)</th>
+                <td id="detailPrice"></td>
+            </tr>
+            <tr>
+                <th>ジャンル / Genre</th>
+                <td id="detailGenre"></td>
+            </tr>
+            <tr>
+                <th>評価 / Rating</th>
+                <td id="detailRating"></td>
+            </tr>
+            <tr>
+                <th>カバー写真 / Cover</th>
+                <td><img id="detailCover" class="detail-cover" src="" alt="Product Cover"></td>
+            </tr>
+        </table>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+    </div>
+    <script src="js/product-detail.js"></script>
+</body>
+</html>

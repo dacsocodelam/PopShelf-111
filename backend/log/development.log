@@ -5879,3 +5879,87 @@ Processing by Api::V1::ProductsController#index as */*
 Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 5056)
 
 
+Started GET "/api/v1/products" for ::1 at 2025-10-17 00:00:07 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 634ms (Views: 0.2ms | ActiveRecord: 3.5ms | Allocations: 56411)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--b847b63eccb525d40be6c0849e2b492a1ddf3511/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg" for ::1 at 2025-10-17 00:00:08 +0900
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--562e081d20bf9bf113a00f2dd34b16d8f90f6009/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg" for ::1 at 2025-10-17 00:00:08 +0900
+Started GET "/api/v1/products" for ::1 at 2025-10-17 00:00:08 +0900
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/controllers/api/v1/products_controller.rb:7:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 29 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 30 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 31 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'cover_photo' LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='index',application='Backend',controller='products'*/[0m
+  ↳ app/models/product.rb:7:in `cover_photo_url'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 5366)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--b847b63eccb525d40be6c0849e2b492a1ddf3511", "filename"=>"tải xuống"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--562e081d20bf9bf113a00f2dd34b16d8f90f6009", "filename"=>"tải xuống (5)"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 8 LIMIT 1 /*action='show',application='Backend',controller='redirect'*/[0m
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 9 LIMIT 1 /*action='show',application='Backend',controller='redirect'*/[0m
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTAsInB1ciI6ImJsb2JfaWQifX0=--f7606dbb3683caeb1a94671c265a090f120f649a/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg" for ::1 at 2025-10-17 00:00:09 +0900
+[36m  Disk Storage (81.3ms) [0m[34mGenerated URL for file at key: b4f4v5wntljdqm7h0ctlmlcnq9na (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiNGY0djV3bnRsamRxbTdoMGN0bG1sY25xOW5hIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZy5qcGdcIjsgZmlsZW5hbWUqPVVURi04Jyd0JUUxJUJBJUEzaSUyMHh1JUUxJUJCJTkxbmcuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTZUMTU6MDU6MDkuMjQzWiIsInB1ciI6ImJsb2Jfa2V5In19--f62c1cb82d09f0bd33a721628c64e56bd03a510f/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiNGY0djV3bnRsamRxbTdoMGN0bG1sY25xOW5hIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZy5qcGdcIjsgZmlsZW5hbWUqPVVURi04Jyd0JUUxJUJBJUEzaSUyMHh1JUUxJUJCJTkxbmcuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTZUMTU6MDU6MDkuMjQzWiIsInB1ciI6ImJsb2Jfa2V5In19--f62c1cb82d09f0bd33a721628c64e56bd03a510f/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg
+Completed 302 Found in 219ms (ActiveRecord: 0.1ms | Allocations: 12030)
+
+
+[36m  Disk Storage (84.2ms) [0m[34mGenerated URL for file at key: bxvxdi503i9ksehodlwpgnje8ap8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJieHZ4ZGk1MDNpOWtzZWhvZGx3cGduamU4YXA4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg1JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODUlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTZUMTU6MDU6MDkuMjQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--250c39e9f19804718fb69bf670dcc9d898a87024/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJieHZ4ZGk1MDNpOWtzZWhvZGx3cGduamU4YXA4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg1JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODUlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTZUMTU6MDU6MDkuMjQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--250c39e9f19804718fb69bf670dcc9d898a87024/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg
+Completed 302 Found in 211ms (ActiveRecord: 1.5ms | Allocations: 12144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJieHZ4ZGk1MDNpOWtzZWhvZGx3cGduamU4YXA4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg1JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODUlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTZUMTU6MDU6MDkuMjQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--250c39e9f19804718fb69bf670dcc9d898a87024/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg" for ::1 at 2025-10-17 00:00:09 +0900
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiNGY0djV3bnRsamRxbTdoMGN0bG1sY25xOW5hIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZy5qcGdcIjsgZmlsZW5hbWUqPVVURi04Jyd0JUUxJUJBJUEzaSUyMHh1JUUxJUJCJTkxbmcuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTZUMTU6MDU6MDkuMjQzWiIsInB1ciI6ImJsb2Jfa2V5In19--f62c1cb82d09f0bd33a721628c64e56bd03a510f/t%E1%BA%A3i%20xu%E1%BB%91ng.jpg" for ::1 at 2025-10-17 00:00:09 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTAsInB1ciI6ImJsb2JfaWQifX0=--f7606dbb3683caeb1a94671c265a090f120f649a", "filename"=>"tải xuống (6)"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 10 LIMIT 1 /*action='show',application='Backend',controller='redirect'*/[0m
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: tqp2v46w8zndrt8n6inu6huef7n4 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ0cXAydjQ2dzh6bmRydDhuNmludTZodWVmN240IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg2JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODYlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTZUMTU6MDU6MDkuMzA1WiIsInB1ciI6ImJsb2Jfa2V5In19--4d63e8fe097af6fcaa9fade541d4397052603baa/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ0cXAydjQ2dzh6bmRydDhuNmludTZodWVmN240IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg2JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODYlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTZUMTU6MDU6MDkuMzA1WiIsInB1ciI6ImJsb2Jfa2V5In19--4d63e8fe097af6fcaa9fade541d4397052603baa/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1302)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ0cXAydjQ2dzh6bmRydDhuNmludTZodWVmN240IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidCUzRmkgeHUlM0ZuZyAlMjg2JTI5LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3QlRTElQkElQTNpJTIweHUlRTElQkIlOTFuZyUyMCUyODYlMjkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMTAtMTZUMTU6MDU6MDkuMzA1WiIsInB1ciI6ImJsb2Jfa2V5In19--4d63e8fe097af6fcaa9fade541d4397052603baa/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg" for ::1 at 2025-10-17 00:00:09 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tải xuống (5)"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tải xuống"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 266)
+
+
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 150)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tải xuống (6)"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 146)
+
+

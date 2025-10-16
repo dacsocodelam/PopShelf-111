@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理者用ページ - Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1 class="admin-title">管理者用ページ (Admin)</h1>
+        
+        <div class="admin-card">
+            <!-- Product Form -->
+            <form id="productForm" class="product-form" enctype="multipart/form-data">
+                <h3 id="formTitle">新規商品を追加</h3>
+                
+                <div class="form-group">
+                    <label>商品名:</label>
+                    <input type="text" name="name" id="name" required />
+                </div>
+
+                <div class="form-group">
+                    <label>説明:</label>
+                    <textarea name="description" id="description" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>著者:</label>
+                    <input type="text" name="author" id="author" />
+                </div>
+
+                <div class="form-group">
+                    <label>リリース年:</label>
+                    <input type="number" name="release_year" id="release_year" />
+                </div>
+
+                <div class="form-group">
+                    <label>価格 (円):</label>
+                    <input type="number" name="price" id="price" step="0.01" />
+                </div>
+
+                <div class="form-group">
+                    <label>ジャンル:</label>
+                    <input type="text" name="genre" id="genre" />
+                </div>
+
+                <div class="form-group">
+                    <label>評価:</label>
+                    <input type="number" name="rating" id="rating" step="0.1" min="0" max="10" />
+                </div>
+
+                <div class="form-group">
+                    <label>カバー写真:</label>
+                    <input type="file" name="cover_photo" id="cover_photo" accept="image/*" />
+                </div>
+
+                <input type="hidden" id="editingProductId" value="" />
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn-submit">
+                        <span id="submitButtonText">追加</span>
+                    </button>
+                    <button type="button" class="btn-cancel" id="cancelEditBtn" style="display: none;" onclick="cancelEdit()">
+                        キャンセル
+                    </button>
+                </div>
+            </form>
+
+            <hr class="divider" />
+
+            <!-- Product List -->
+            <div class="product-list">
+                <h2 class="product-list-title">製品一覧</h2>
+                <div id="adminProductContainer">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <a class="admin-link" href="index.html">ホームページに戻る</a>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

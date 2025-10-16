@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン - Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" onsubmit="handleLogin(event)">
+            <h2>管理者としてログイン</h2>
+            
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="email" required />
+            </div>
+
+            <div class="form-group">
+                <label>パスワード:</label>
+                <input type="password" id="password" required />
+            </div>
+
+            <p id="errorMessage" class="error-message" style="display: none;"></p>
+
+            <button type="submit" class="btn-login">ログイン</button>
+
+            <a href="index.html" class="back-link">ホームページに戻る</a>
+        </form>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
